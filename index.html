@@ -1,0 +1,77 @@
+<html>
+<head>
+  <style>
+    .color-box {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<div id="test1" style="padding: 50px;">
+  <div id="yellow" class="color-box" style="background: blue;"></div>
+  <div id="blue" class="color-box" style="background: red;"></div>
+  <div id="red" class="color-box" style="background: yellow;"></div>
+  <div id="green" class="color-box" style="background: black;"></div>
+  <div id="black" class="color-box" style="background: green;"></div>
+</div>
+<div id="test2" style="padding: 50px;">
+  <h1>Hey</h1>
+  <p>this is your small test :)</p>
+  <h2>This page's html structure was broken</h2>
+</div>
+<div id="test3" style="padding: 50px;"></div>
+<h1 id="lost" style="color:red;">All the tags in that page are in the container beside me.. I'm lost.., Please help me</h1>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+
+    $('h1,p,h2,h3,h5').hide();
+
+    container_elems = $("#test2").children();
+    delay = 0;
+
+    container_elems.each(function () {
+        delay += 500;
+        elem = $(this);
+        showMe(elem, delay);
+    });
+
+    showMe($('#lost'), delay);
+
+    function showMe(element, delay_time) {
+        setTimeout(function () {
+            element.show();
+        }, delay_time);
+    }
+
+    /**
+     * Your code starts here:
+     */
+
+    // test 1 - fix the elements colors
+
+
+    // test 2 - fix the lost div to be a part of test2
+
+
+    // Bonus - create those elements on test3
+
+    var colorsArray = [
+        {type: "p", style: {background: "yellow"}, content: "i'm a content", className: "color-box"},
+        {type: "div", style: {background: "blue", display: "block"}, className: "color-box"},
+        {type: "h1", id: "h1", style: {background: "red"}, className: "color-box"},
+        {type: "span", style: {display: "none"}},
+        {type: "input", value: "YO HOO"}
+    ];
+
+
+    // GOOD LUCK !
+
+
+</script>
+
+</body>
+</html>
